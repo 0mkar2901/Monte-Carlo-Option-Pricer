@@ -9,6 +9,8 @@ This project implements a high-performance **Monte Carlo simulation** to price A
 
 Because Asian options depend on the average price over a duration, they lack a closed-form Black-Scholes solution. This engine solves that by simulating 100,000+ potential price trajectories through **Geometric Brownian Motion (GBM)**.
 
+![Price Diffusion Paths](images/diffusion.png)
+
 ---
 
 ## 02. Core Financial Engineering
@@ -38,6 +40,8 @@ To ensure the "Fair Value" is accurate, the engine tracks the **Standard Error o
 
 * **Convergence:** The model follows the $1/\sqrt{N}$ rule. As the number of paths ($N$) increases, the simulation noise (variance) decays.
 * **Confidence Interval:** Every price comes with a 95% confidence band ($Price \pm 1.96 \times SEM$), proving the mathematical stability of the result.
+
+![Price Convergence Analysis](images/convergence.png)
 
 ---
 
